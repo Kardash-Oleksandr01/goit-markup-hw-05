@@ -448,6 +448,7 @@ a {
 .subscribe-text {
   max-width: 280px;
   margin-bottom: 16px;     /* виправлено */
+  font-weight: 500;
   font-size: 16px;
   line-height: 1.5;        /* виправлено */
   letter-spacing: 0.02em;  /* виправлено */
@@ -492,11 +493,7 @@ a {
   
 }
 
-/* Subscribe */
-.subscribe-text {
-  font-weight: 500;
-  margin-bottom: 12px;
-}
+
 
 .subscribe-form {
   display: flex;
@@ -636,16 +633,16 @@ background-color: #404bbf;
 }
 
 
-/* Всі поля форми всередині модалки */
+/* Всі поля модалки */
 .modal-form .input-wrapper,
 .modal-form .textarea-wrapper {
-  margin-bottom: 8px; /* відступ між div у модалці */
+  margin-bottom: 8px; /* відступ для модалки */
 }
 
-/* За потреби, для інших форм на сайті, окремо можна задавати 16px */
-.form-wrapper .input-wrapper,
-.form-wrapper .textarea-wrapper {
-  margin-bottom: 16px;
+/* Всі інші поля форм на сайті */
+:not(.modal-form) .input-wrapper,
+:not(.modal-form) .textarea-wrapper {
+  margin-bottom: 16px; /* відступ для інших форм */
 }
 
 
