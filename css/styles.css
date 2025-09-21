@@ -634,16 +634,16 @@ background-color: #404bbf;
 
 .input-wrapper,
 .textarea-wrapper {
-  margin-bottom: 8px; /* ← Вимога: саме 8px */
+  margin-bottom: 16px; /* ← виправлено з 8px */
 }
 
-.input-label,
-.textarea-label {
+/* Універсальний клас для label */
+.form-label {
   display: block;
-font-size: 12px;
-line-height: 1.17;
-letter-spacing: 0.04em;
-  color: var(--label-color, #8e8f99);
+  font-size: 12px;          /* ← вимога */
+  line-height: 1.17;        /* ← вимога */
+  letter-spacing: 0.04em;   /* ← вимога */
+  color: var(--label-color, #8e8f99); /* ← вимога */
   margin-bottom: 4px;
 }
 

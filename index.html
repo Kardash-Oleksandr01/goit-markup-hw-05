@@ -424,54 +424,62 @@
     <!-- Modal title -->
     <p class="modal-title">Leave your contacts and we will call you back</p>
 
-    <!-- Modal form -->
-    <form class="modal-form">
+    <!-- Modal form --> 
+<form class="modal-form">
 
-      <!-- Name -->
-      <div class="input-wrapper">
-        <label class="input-label" for="user-name">Name</label>
-        <div class="input-box">
-          <input class="input-field" id="user-name" name="user-name" type="text" required value="true">
-          <svg class="input-icon" width="18" height="24"><use href="./images/icons.svg#icon-user"></use></svg>
-        </div>
-      </div>
-
-      <!-- Phone -->
-      <div class="input-wrapper">
-        <label class="input-label" for="user-phone">Phone</label>
-        <div class="input-box">
-          <input class="input-field" id="user-phone" name="user-phone" type="tel" required value="true">
-          <svg class="input-icon" width="18" height="24"><use href="./images/icons.svg#icon-phone"></use></svg>
-        </div>
-      </div>
-
-      <!-- Email -->
-      <div class="input-wrapper">
-        <label class="input-label" for="user-email-modal">Email</label>
-        <div class="input-box">
-          <input class="input-field" id="user-email-modal" name="user-email-modal" type="email" required value="true">
-          <svg class="input-icon" width="18" height="24"><use href="./images/icons.svg#icon-email"></use></svg>
-        </div>
-      </div>
-
-      <!-- Comment -->
-      <div class="textarea-wrapper">
-        <label class="textarea-label" for="user-comment">Comment</label>
-        <textarea class="textarea-field" id="user-comment" name="user-comment" placeholder="Text input"></textarea>
-      </div>
-
-     <!-- Checkbox -->
-<div class="checkbox-wrapper">
-  <input class="visually-hidden" type="checkbox" id="user-privacy" name="user-privacy" required value="true">
-  <label class="checkbox-label" for="user-privacy">
-    <span class="checkbox-box">
-      <svg class="checkbox-icon" width="10" height="8">
-        <use href="./images/icons.svg#icon-check"></use>
+  <!-- Name -->
+  <div class="input-wrapper">
+    <label class="form-label" for="user-name">Name</label>
+    <div class="input-box">
+      <input class="input-field" id="user-name" name="user-name" type="text" required value="true">
+      <svg class="input-icon" width="18" height="24">
+        <use href="./images/icons.svg#icon-user"></use>
       </svg>
-    </span>
-    I accept the terms and conditions of the <a class="privacy-link" href="#">Privacy Policy</a>
-  </label>
-</div>
+    </div>
+  </div>
+
+  <!-- Phone -->
+  <div class="input-wrapper">
+    <label class="form-label" for="user-phone">Phone</label>
+    <div class="input-box">
+      <input class="input-field" id="user-phone" name="user-phone" type="tel" required value="true">
+      <svg class="input-icon" width="18" height="24">
+        <use href="./images/icons.svg#icon-phone"></use>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Email -->
+  <div class="input-wrapper">
+    <label class="form-label" for="user-email-modal">Email</label>
+    <div class="input-box">
+      <input class="input-field" id="user-email-modal" name="user-email-modal" type="email" required value="true">
+      <svg class="input-icon" width="18" height="24">
+        <use href="./images/icons.svg#icon-email"></use>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Comment -->
+  <div class="textarea-wrapper">
+    <label class="form-label" for="user-comment">Comment</label>
+    <textarea class="textarea-field" id="user-comment" name="user-comment" placeholder="Text input"></textarea>
+  </div>
+
+  <!-- Checkbox -->
+  <div class="checkbox-wrapper">
+    <input class="visually-hidden" type="checkbox" id="user-privacy" name="user-privacy" required value="true">
+    <label class="checkbox-label form-label" for="user-privacy">
+      <span class="checkbox-box">
+        <svg class="checkbox-icon" width="10" height="8">
+          <use href="./images/icons.svg#icon-check"></use>
+        </svg>
+      </span>
+      I accept the terms and conditions of the 
+      <a class="privacy-link" href="#">Privacy Policy</a>
+    </label>
+  </div>
+
 
       <!-- Submit button -->
       <button class="modal-submit" type="submit">Send</button>
