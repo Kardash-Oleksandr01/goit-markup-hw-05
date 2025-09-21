@@ -444,15 +444,13 @@ a {
   color: #4d5ae5;
 }
 
-/* ====================== */
-/* Виправлення для параграфа */
-/* ====================== */
+ /* Виправлення для параграфа */
 .footer-text {
   max-width: 280px;
-  margin-bottom: 16px;       /*  margin-bottom виправлено */
+  margin-bottom: 16px;     /* виправлено */
   font-size: 14px;
-  line-height: 1.5;       /*  line-height виправлено */
-  letter-spacing: 0.02em;   /*  letter-spacing виправлено */
+  line-height: 1.5;        /* виправлено */
+  letter-spacing: 0.02em;  /* виправлено */
   color: #f4f4fd;
 }
 
@@ -545,6 +543,10 @@ a {
 background-color: #404bbf;
 }
 
+/* Іконка в кнопці */
+.button-icon {
+  margin-left: 16px;       /* виправлено */
+}
 
 /* ====================== */
 /* MODAL CSS              */
@@ -632,9 +634,15 @@ background-color: #404bbf;
 }
 
 
+/* загальне правило для полів усього сайту */
 .input-wrapper,
 .textarea-wrapper {
-  margin-bottom: 16px; /* ← виправлено з 8px */
+  margin-bottom: 16px;
+}
+
+/* конкретніше правило — тільки всередині модалки (.modal-form) */
+.modal-form .input-wrapper,
+.modal-form .textarea-wrapper {
   margin-bottom: 8px;
 }
 
