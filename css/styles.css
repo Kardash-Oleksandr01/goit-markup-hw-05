@@ -635,7 +635,9 @@ background-color: #404bbf;
 .input-wrapper,
 .textarea-wrapper {
   margin-bottom: 16px; /* ← виправлено з 8px */
+  margin-bottom: 8px;
 }
+
 
 /* Універсальний клас для label */
 .form-label {
