@@ -636,13 +636,15 @@ background-color: #404bbf;
 /* Всі поля модалки */
 .modal-form .input-wrapper,
 .modal-form .textarea-wrapper {
+  width: 100%;
   margin-bottom: 8px; /* відступ для модалки */
 }
 
 /* Всі інші поля форм на сайті */
 :not(.modal-form) .input-wrapper,
 :not(.modal-form) .textarea-wrapper {
-  margin-bottom: 16px; /* відступ для інших форм */
+ width: 100%;
+ margin-bottom: 16px; /* відступ для інших форм */
 }
 
 
