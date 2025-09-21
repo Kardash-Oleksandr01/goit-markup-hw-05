@@ -445,7 +445,7 @@ a {
 }
 
  /* Виправлення для параграфа */
-.footer-text {
+.subscribe-text {
   max-width: 280px;
   margin-bottom: 16px;     /* виправлено */
   font-size: 14px;
@@ -634,17 +634,18 @@ background-color: #404bbf;
 }
 
 
-/* загальне правило для полів усього сайту */
-.input-wrapper,
-.textarea-wrapper {
+/* Всі поля форми всередині модалки */
+.modal-form .input-wrapper,
+.modal-form .textarea-wrapper {
+  margin-bottom: 8px; /* відступ між div у модалці */
+}
+
+/* За потреби, для інших форм на сайті, окремо можна задавати 16px */
+.form-wrapper .input-wrapper,
+.form-wrapper .textarea-wrapper {
   margin-bottom: 16px;
 }
 
-/* конкретніше правило — тільки всередині модалки (.modal-form) */
-.modal-form .input-wrapper,
-.modal-form .textarea-wrapper {
-  margin-bottom: 8px;
-}
 
 
 /* Універсальний клас для label */
