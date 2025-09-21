@@ -448,11 +448,13 @@ a {
 .subscribe-text {
   max-width: 280px;
   margin-bottom: 16px;     /* виправлено */
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.5;        /* виправлено */
   letter-spacing: 0.02em;  /* виправлено */
-  color: #f4f4fd;
+  color: #ffffff;
 }
+
+  
 
 /* Social */
 .footer-social .social-text {
