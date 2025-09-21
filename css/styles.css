@@ -451,7 +451,7 @@ a {
   max-width: 280px;
   margin-bottom: 16px;       /*  margin-bottom виправлено */
   font-size: 14px;
-  line-height: 150%;        /*  line-height виправлено */
+  line-height: 1.5;       /*  line-height виправлено */
   letter-spacing: 0.02em;   /*  letter-spacing виправлено */
   color: #f4f4fd;
 }
@@ -631,23 +631,18 @@ background-color: #404bbf;
   transition: fill 250ms cubic-bezier(0.4,0,0.2,1);
 }
 
-/* Form styles */
+
 .input-wrapper,
 .textarea-wrapper {
-  /* ✅ Виправлено: відступ між div */
-  margin-bottom: 16px;
+  margin-bottom: 8px; /* ← Вимога: саме 8px */
 }
 
 .input-label,
 .textarea-label {
   display: block;
-  /* ✅ Виправлено: розмір шрифту */
-  font-size: 12px;
-  /* ✅ Виправлено: line-height */
-  line-height: 1.17;
-  /* ✅ Виправлено: letter-spacing */
-  letter-spacing: 0.04em;
-  /* ✅ Виправлено: колір через змінну */
+font-size: 12px;
+line-height: 1.17;
+letter-spacing: 0.04em;
   color: var(--label-color, #8e8f99);
   margin-bottom: 4px;
 }
@@ -721,16 +716,17 @@ background-color: #404bbf;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  fill: transparent; /* ← Вимога: fill: transparent */
   transition: background-color 250ms cubic-bezier(0.4,0,0.2,1),
               border 250ms cubic-bezier(0.4,0,0.2,1),
               fill 250ms cubic-bezier(0.4,0,0.2,1);
 }
 
-/* ✅ Виправлено: value="true" можна ставити на checkbox */
-.visually-hidden[value="true"]:checked + .checkbox-label .checkbox-box {
-  background-color: #404bbf;
+/* Checked state */
+.visually-hidden:checked + .checkbox-label .checkbox-box {
+  background-color: var(--checkbox-bg, #404bbf);
   border: none;
-  fill: #F4F4FD;
+  fill: var(--checkbox-icon, #F4F4FD);
 }
 
 .privacy-link {
