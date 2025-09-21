@@ -396,65 +396,126 @@
         </ul>
       </div>
 
-
-
-          <!-- NEW Subscribe Form Block -->
-    <div class="footer-subscribe">
-      <p class="subscribe-text">Subscribe</p>
-      <form class="subscribe-form">
-        <input 
-          type="email" 
-          name="email" 
-          class="subscribe-input" 
-          placeholder="E-mail" 
-          required>
-        <button type="submit" class="subscribe-btn">
-          Subscribe
-          <svg class="subscribe-icon" width="24" height="24">
-            <use href="./images/icons.svg#icon-send"></use>
-          </svg>
-        </button>
-      </form>
-    </div>
-    <!-- END Subscribe Form Block -->
+ <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <!-- Контейнер для форми -->
+      <div class="subscribe-container">
+        <p class="subscribe-text">Subscribe</p>
+        <form class="subscribe-form">
+          <label class="form-label">
+            <input 
+              class="form-input"
+              type="email" 
+              name="user-email"
+              placeholder="E-mail"
+              required
+            />
+          </label>
+          <button class="form-button" type="submit">
+            Subscribe
+            <svg class="button-icon" width="24" height="24">
+              <use href="./images/icons.svg#icon-send"></use>
+            </svg>
+          </button>
+        </form>
+      </div>
     </div>
   </footer>
 
- <!-- 🔹 НОВИЙ КОД: модальне вікно -->
-<div class="backdrop is-hidden">
-  <div class="modal">
-    <button type="button" class="modal-close-btn">
-      <svg class="close-icon" width="8" height="8">
-        <use href="./images/icons.svg#icon-close"></use>
-      </svg>
-    </button>
-    <p class="modal-text">Leave your contacts and we will call you back</p>
-    <form class="modal-form">
-      <label class="form-label">
-        Name
-        <div class="input-wrapper">
-          <input type="text" name="user-name" class="form-input" required>
-          <svg class="form-icon" width="18" height="24">
-            <use href="./images/icons.svg#icon-user"></use>
-          </svg>
-        </div>
-      </label>
-      <label class="form-label">
-        Email
-        <div class="input-wrapper">
-          <input type="email" name="user-email" class="form-input" required>
-          <svg class="form-icon" width="18" height="24">
-            <use href="./images/icons.svg#icon-email"></use>
-          </svg>
-        </div>
-      </label>
-      <button type="submit" class="form-submit-btn">Send</button>
-    </form>
-  </div>
-</div>
-<!-- 🔹 КІНЕЦЬ нового коду -->
+  <!-- Modal -->
+  <div class="modal-backdrop" id="modalWrapper" aria-hidden="true">
+    <div class="modal-window">
+      <button class="modal-close" id="modalCloseBtn" type="button">
+        <svg class="modal-close-icon" width="8" height="8">
+          <use href="./images/icons.svg#icon-close"></use>
+        </svg>
+      </button>
+      <p class="modal-title">Leave your contacts and we will call you back</p>
 
-</body>
+      <form class="modal-form">
+        <!-- Name -->
+        <div class="input-wrapper">
+          <label class="input-label" for="user-name">Name</label>
+          <div class="input-box">
+            <input 
+              class="input-field"
+              id="user-name"
+              name="user-name"
+              type="text"
+              required
+            />
+            <svg class="input-icon" width="18" height="24">
+              <use href="./images/icons.svg#icon-user"></use>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Phone -->
+        <div class="input-wrapper">
+          <label class="input-label" for="user-phone">Phone</label>
+          <div class="input-box">
+            <input 
+              class="input-field"
+              id="user-phone"
+              name="user-phone"
+              type="tel"
+              required
+            />
+            <svg class="input-icon" width="18" height="24">
+              <use href="./images/icons.svg#icon-phone"></use>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="input-wrapper">
+          <label class="input-label" for="user-email-modal">Email</label>
+          <div class="input-box">
+            <input 
+              class="input-field"
+              id="user-email-modal"
+              name="user-email-modal"
+              type="email"
+              required
+            />
+            <svg class="input-icon" width="18" height="24">
+              <use href="./images/icons.svg#icon-email"></use>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Comment -->
+        <div class="textarea-wrapper">
+          <label class="input-label" for="user-comment">Comment</label>
+          <textarea 
+            class="textarea-field"
+            id="user-comment"
+            name="user-comment"
+            placeholder="Text input"
+          ></textarea>
+        </div>
+
+        <!-- Checkbox -->
+        <div class="checkbox-wrapper">
+          <input 
+            class="checkbox-input"
+            type="checkbox"
+            id="privacy-policy"
+            required
+          />
+          <label class="checkbox-label" for="privacy-policy">
+            I accept the <a href="#">Privacy Policy</a>
+          </label>
+        </div>
+
+        <!-- Кнопка -->
+        <button class="modal-submit" type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+
+    </body>
 
 </html>
 
