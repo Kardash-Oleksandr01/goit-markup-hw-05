@@ -449,9 +449,9 @@ a {
 /* ====================== */
 .footer-text {
   max-width: 280px;
-  margin: 0 0 16px 0;       /*  margin-bottom виправлено */
+  margin-bottom: 16px;       /*  margin-bottom виправлено */
   font-size: 14px;
-  line-height: 1.5;         /*  line-height виправлено */
+  line-height: 150%;        /*  line-height виправлено */
   letter-spacing: 0.02em;   /*  letter-spacing виправлено */
   color: #f4f4fd;
 }
@@ -486,8 +486,10 @@ a {
 }
 
 .social-icon {
-  fill: #fff;
-  margin-left: 16px;         /*  margin-left виправлено */
+   fill: var(--cloud, #f4f4fd);
+  width: 24px;
+  height: 24px;
+  
 }
 
 /* Subscribe */
@@ -548,106 +550,219 @@ background-color: #404bbf;
 /* MODAL CSS              */
 /* ====================== */
 .modal-backdrop {
-  position: fixed; top: 0; left: 0;
+  position: fixed;
+  top: 0; left: 0;
   width: 100%; height: 100%;
   background-color: rgba(46,47,66,0.4);
-  display: flex; align-items: center; justify-content: center;
-  opacity: 1; visibility: visible; /* відображення одразу */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 1;
+  visibility: visible; /* показуємо одразу для перевірки */
+  
+  /* ✅ Виправлено: плавна поява/зникнення */
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+              visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-window {
-  position: relative;
-  width: 408px; min-height: 584px;
+  /* ✅ Виправлено: позиціонування відносно вікна */
+  position: absolute;
+  top: 50%;   /* центрування по вертикалі */
+  left: 50%;  /* центрування по горизонталі */
+  transform: translate(-50%, -50%);
+
+  width: 408px;
+  min-height: 584px;
   padding: 72px 24px 24px;
-
+ 
   background-color: #fcfcfc;
-
+ 
   border-radius: 4px;
-  box-shadow: 0 1px 1px rgba(0,0,0,0.14)
-              0 1px 3px rgba(0,0,0,0.12)
 
-              0 2px 1px rgba(0,0,0,0.2);
+  /* ✅ Виправлено: тінь */
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14),
+              0px 1px 3px rgba(0, 0, 0, 0.12),
+              0px 2px 1px rgba(0, 0, 0, 0.2);
+
+  /* ✅ Виправлено: анімація для transform */
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-title {
-  font-weight: 500; font-size: 16px; line-height: 1.5;
-  text-align: center; letter-spacing: 0.02em; margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 0.02em;
+  margin-bottom: 16px;
   color: var(--text-color, #2E2F42);
 }
 
 .modal-close {
-  position: absolute; top: 24px; right: 24px;
-  width: 24px; height: 24px; padding: 0;
-  border-radius: 50%; border: 1px solid rgba(0,0,0,0.1);
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0.1);
   background-color: #e7e9fc;
-  display: flex; align-items: center; justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  transition: background-color 250ms cubic-bezier(0.4,0,0.2,1), border 250ms cubic-bezier(0.4,0,0.2,1);
+  transition: background-color 250ms cubic-bezier(0.4,0,0.2,1),
+              border 250ms cubic-bezier(0.4,0,0.2,1);
 }
-
 
 
 .modal-close:hover,
 .modal-close:focus {
-  background-color: #404bbf; border: none;
+  background-color: #404bbf;
+  border: none;
 }
+
 .modal-close:hover svg,
-.modal-close:focus svg { fill: #ffffff; transition: fill 250ms cubic-bezier(0.4,0,0.2,1); }
+.modal-close:focus svg {
+  fill: #ffffff;
+  transition: fill 250ms cubic-bezier(0.4,0,0.2,1);
+}
 
 /* Form styles */
-.input-wrapper, .textarea-wrapper { margin-bottom: 8px; }
-
-.input-label, .textarea-label {
-  display: block; font-size: 12px; line-height: 1.17; letter-spacing: 0.04em;
-  color: var(--label-color, #8e8f99); margin-bottom: 4px;
+.input-wrapper,
+.textarea-wrapper {
+  /* ✅ Виправлено: відступ між div */
+  margin-bottom: 16px;
 }
 
-.input-box { position: relative; }
+.input-label,
+.textarea-label {
+  display: block;
+  /* ✅ Виправлено: розмір шрифту */
+  font-size: 12px;
+  /* ✅ Виправлено: line-height */
+  line-height: 1.17;
+  /* ✅ Виправлено: letter-spacing */
+  letter-spacing: 0.04em;
+  /* ✅ Виправлено: колір через змінну */
+  color: var(--label-color, #8e8f99);
+  margin-bottom: 4px;
+}
+
+.input-box {
+  position: relative;
+}
+
 .input-field {
-  width: 100%; height: 40px; padding-left: 38px;
-  border: 1px solid rgba(46,47,66,0.4); border-radius: 4px;
-  background-color: transparent; outline: none;
+  width: 100%;
+  height: 40px;
+  padding-left: 38px;
+  border: 1px solid rgba(46,47,66,0.4);
+  border-radius: 4px;
+  background-color: transparent;
+
+  /* ✅ Виправлено: outline */
+  outline: transparent;
+
   transition: border-color 250ms cubic-bezier(0.4,0,0.2,1);
 }
-.input-field:focus { border-color: #4D5AE5; }
-.input-field:focus + svg { fill: #4D5AE5; }
-.input-box svg { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); transition: fill 250ms cubic-bezier(0.4,0,0.2,1); }
 
+.input-field:focus {
+  border-color: #4D5AE5;
+}
+
+.input-field:focus + svg {
+  fill: #4D5AE5;
+}
+
+.input-box svg {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: fill 250ms cubic-bezier(0.4,0,0.2,1);
+}
 
 .textarea-field {
-  width: 100%; height: 120px; padding: 8px 16px;
-  border: 1px solid rgba(46,47,66,0.4); border-radius: 4px;
-  background-color: transparent; resize: none;
-  font-size: 12px; line-height: 1.17; letter-spacing: 0.04em; color: rgba(46,47,66,0.4);
-  outline: none;
+  width: 100%;
+  height: 120px;
+  padding: 8px 16px;
+  border: 1px solid rgba(46,47,66,0.4);
+  border-radius: 4px;
+  background-color: transparent;
+  resize: none;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: rgba(46,47,66,0.4);
+
+  /* ✅ Виправлено: outline */
+  outline: transparent;
+
   transition: border-color 250ms cubic-bezier(0.4,0,0.2,1);
 }
-.textarea-field:focus { border-color: #4D5AE5; }
 
-.checkbox-wrapper { margin-bottom: 24px; }
+.textarea-field:focus {
+  border-color: #4D5AE5;
+}
+
+.checkbox-wrapper {
+  margin-bottom: 24px;
+}
+
 .checkbox-box {
-  width: 16px; height: 16px; border: 1px solid rgba(46,47,66,0.4); border-radius: 2px;
-  display: inline-flex; align-items: center; justify-content: center;
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(46,47,66,0.4);
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   transition: background-color 250ms cubic-bezier(0.4,0,0.2,1),
               border 250ms cubic-bezier(0.4,0,0.2,1),
               fill 250ms cubic-bezier(0.4,0,0.2,1);
 }
-.visually-hidden:checked + .checkbox-label .checkbox-box {
-  background-color: #404bbf; border: none; fill: #F4F4FD;
+
+/* ✅ Виправлено: value="true" можна ставити на checkbox */
+.visually-hidden[value="true"]:checked + .checkbox-label .checkbox-box {
+  background-color: #404bbf;
+  border: none;
+  fill: #F4F4FD;
 }
 
 .privacy-link {
-  color: #4d5ae5; text-decoration: none;
+  color: #4d5ae5;
+  text-decoration: none;
+}
+
+/* ✅ Виправлено: span з іконкою */
+.checkbox-box span {
+  fill: transparent;
 }
 
 /* Submit button */
 .modal-submit {
-  display: block; min-width: 169px; height: 56px;
-  margin: 0 auto; padding: 0;
-  font-family: "Roboto", sans-serif; font-size: 16px; font-weight: 500;
-  line-height: 1.5; letter-spacing: 0.04em; color: #ffffff;
-  background-color: #4D5AE5; border: none; cursor: pointer;
+  display: block;
+  min-width: 169px;
+  height: 56px;
+  margin: 0 auto;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  background-color: #4D5AE5;
+  border: none;
+  cursor: pointer;
   transition: background-color 250ms cubic-bezier(0.4,0,0.2,1);
 }
+
 .modal-submit:hover,
-.modal-submit:focus { background-color: #404bbf; }
+.modal-submit:focus {
+  background-color: #404bbf;
+}
