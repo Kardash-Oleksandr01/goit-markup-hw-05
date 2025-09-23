@@ -8,6 +8,11 @@
 *::before,
 *::after {
   box-sizing: border-box;
+
+}
+
+element,style {
+  max-width: 264px;
 }
 
 body {
@@ -424,7 +429,7 @@ a {
 .site-footer {
   background-color: #2e2f42;
   color: #fff;
-  padding: 40px 0;
+  padding: 100px 0;
 }
 
 .footer-container {
@@ -435,13 +440,21 @@ a {
 }
 
 .footer-logo {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 700;
   color: #fff;
+  display: inline-block;
+  margin-bottom: 16px;
 }
+
+
 
 .footer-logo .logo-part {
   color: #4d5ae5;
+}
+
+.footer-text{
+  max-width: 264px;
 }
 
  /* Виправлення для параграфа */
