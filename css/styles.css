@@ -753,7 +753,13 @@ background-color: #404bbf;
 .privacy-link {
   color: #4d5ae5;
   text-decoration: none;
+  line-height: 133%;
+text-decoration: underline;
+text-decoration-skip-ink: none;
+
 }
+
+
 
 /* ✅ Виправлено: span з іконкою */
 .checkbox-box span {
